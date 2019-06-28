@@ -17,6 +17,7 @@
 | [kernel-panel.sh]   | ![kernel]   | [kernel-tooltip]   |                               |
 | [memory-panel.sh]   | ![memory]   | [memory-tooltip]   | [memory-gui]                  |
 | [network-panel.sh]  | ![network]  | [network-tooltip]  |                               |
+| [ip-panel.sh]       | ![ip]       | [ip-tooltip]       |                               |
 | [pacman-panel.sh]   | ![pacman]   | [pacman-tooltip]   |                               |
 | [power-panel.sh]    | ![power]    |                    | [power-gui]                   |
 | [spotify-panel.sh]  | ![spotify]  | [spotify-tooltip]  | Gain focus on spotify window  |
@@ -29,13 +30,14 @@ To get started, you need a horizontal xfce4-panel with **28p** row size and **10
 |---------------------------:|:-------------------------:|:----------:|
 | /path/to/battery-panel.sh  | **xos4 Terminus Bold 18** |  **1.75**  |
 | /path/to/cleaner-panel.sh  | **xos4 Terminus Bold 18** |  **3600**  |
-| /path/to/cpu-panel.sh      | **xos4 Terminus Bold 18** |  **1.50**  |
+| /path/to/cpu-panel.sh      | **xos4 Terminus Bold 18** |  **1.00**  |
 | /path/to/datetime-panel.sh | **xos4 Terminus Bold 18** |  **1.00**  |
 | /path/to/die-panel.sh      | **xos4 Terminus Bold 18** |  **2.75**  |
 | /path/to/eject-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/kernel-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/memory-panel.sh   | **xos4 Terminus Bold 18** |  **1.00**  |
 | /path/to/network-panel.sh  | **xos4 Terminus Bold 18** |  **2.25**  |
+| /path/to/ip-panel.sh       | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/pacman-panel.sh   | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/power-panel.sh    | **xos4 Terminus Bold 18** |  **3600**  |
 | /path/to/spotify-panel.sh  | **xos4 Terminus Bold 18** |  **1.00**  |
@@ -58,6 +60,7 @@ This project is licensed under GPL(v3) or later.
 [kernel-panel.sh]: kernel-panel.sh
 [memory-panel.sh]: memory-panel.sh
 [network-panel.sh]: network-panel.sh
+[ip-panel.sh]: ip-panel.sh
 [pacman-panel.sh]: pacman-panel.sh
 [power-panel.sh]: power-panel.sh
 [spotify-panel.sh]: spotify-panel.sh
@@ -70,7 +73,7 @@ This project is licensed under GPL(v3) or later.
 [cleaner]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cleaner-panel/cleaner.png "cleaner"
 [cleaner-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cleaner-panel/cleaner-gui.png "cleaner-gui"
 [cleaner-gui-2]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cleaner-panel/cleaner-gui-2.png "cleaner-gui-2"
-[cpu]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cpu-panel/cpu.gif "cpu"
+[cpu]: https://raw.githubusercontent.com/cl1pp0/xfce4-genmon-scripts/master/previews/cpu-panel/cpu.png "cpu"
 [cpu-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cpu-panel/cpu-tooltip.gif "cpu-tooltip"
 [cpu-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/cpu-panel/cpu-gui.png "cpu-gui"
 [datetime]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/datetime-panel/datetime.gif "datetime"
@@ -85,6 +88,8 @@ This project is licensed under GPL(v3) or later.
 [memory-gui]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/memory-panel/memory-gui.png "memory-gui"
 [network]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/network-panel/network.gif "network"
 [network-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/network-panel/network-tooltip.png "network-tooltip"
+[ip]: https://raw.githubusercontent.com/cl1pp0/xfce4-genmon-scripts/master/previews/ip-panel/ip-panel.png "ip"
+[ip-tooltip]: https://raw.githubusercontent.com/cl1pp0/xfce4-genmon-scripts/master/previews/ip-panel/ip-tooltip.png "ip-tooltip"
 [pacman]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/pacman-panel/pacman.png "pacman"
 [pacman-tooltip]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/pacman-panel/pacman-tooltip.png "pacman-tooltip"
 [power]: https://raw.githubusercontent.com/xtonousou/xfce4-genmon-scripts/master/previews/power-panel/power.png "power"
