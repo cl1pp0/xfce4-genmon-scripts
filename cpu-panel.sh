@@ -23,10 +23,13 @@ for CPU in "${CPU_ARRAY[@]}"; do
   MORE_INFO+="├─ CPU ${STEP}: ${CPU} MHz\n"
   let STEP+=1
 done
-MORE_INFO+="└─ Temperature: $(sensors | awk '/[Cc]ore\ 0/{print $3}')"
+#TEMP=$(sensors | awk '/[Cc]ore\ 0/{print $3}' | tr -d "+°C")
+TEMP=$(sensors | awk '/[Pp]ackage\ id\ 0/{print $4}' | tr -d "+°C")
+MORE_INFO+="└─ Temperature: ${TEMP}°C"
 MORE_INFO+="</tool>"
-STDOUT=$(( STDOUT / NUM_OF_CPUS )) # calculate average clock speed
-STDOUT=$(awk '{$1 = $1 / 1024; printf "%.2f%s", $1, " GHz"}' <<< "${STDOUT}")
+CLOCK=$(( STDOUT / NUM_OF_CPUS )) # calculate average clock speed
+STDOUT=${CLOCK}
+STDOUT=$(awk '{$1 = $1 / 1000; printf "%.2f%s", $1, " GHz"}' <<< "${STDOUT}")
 
 # Panel
 if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
@@ -38,7 +41,31 @@ if [[ $(file -b "${ICON}") =~ PNG|SVG ]]; then
 else
   INFO="<txt>"
 fi
-INFO+="${STDOUT}"
+# Clock
+if ((${CLOCK} <= 1000)); then
+  INFO+="<span fgcolor='lightgreen'>${STDOUT}</span>"
+elif ((${CLOCK} <= 2000)); then
+  INFO+="<span fgcolor='yellow'>${STDOUT}</span>"
+elif ((${CLOCK} <= 3000)); then
+  INFO+="<span fgcolor='orange'>${STDOUT}</span>"
+elif ((${CLOCK} <= 4000)); then
+  INFO+="<span fgcolor='red'>${STDOUT}</span>"
+else
+  INFO+="${STDOUT}"
+fi
+# Temperature
+if [ $(echo "${TEMP} <= 40.0" | bc -l) -eq 1 ]; then
+  INFO+="<span fgcolor='lightgreen'> ${TEMP}°C</span>"
+elif [ $(echo "${TEMP} <= 60.0" | bc -l) -eq 1 ]; then
+  INFO+="<span fgcolor='yellow'> ${TEMP}°C</span>"
+elif [ $(echo "${TEMP} <= 80.0" | bc -l) -eq 1 ]; then
+  INFO+="<span fgcolor='orange'> ${TEMP}°C</span>"
+elif [ $(echo "${TEMP} <= 100.0" | bc -l) -eq 1 ]; then
+  INFO+="<span fgcolor='red'> ${TEMP}°C</span>"
+else
+  INFO+=" ${TEMP}°C"
+fi
+
 INFO+="</txt>"
 
 # Panel Print
