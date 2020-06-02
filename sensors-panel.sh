@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-readonly TEMP_FAN=$(sensors | awk '/^fan1/{$2 = $2; $3 = $3; printf("%4d %s\n", $2, $3)}; /^Package/{$4 =$4; printf $4 " "}')
+readonly TEMP_FAN=$(sensors | awk '/^Package/{temp = $4}; /^fan1/{fan=$2}; END {if (fan==0) fan="----"; printf("%s %4s rpm\n", temp, fan);}')
 readonly SENSORS=$(sensors)
 
 INFO="<txt>"
